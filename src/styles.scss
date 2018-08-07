@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/_theming.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+// COLOR VARIABLES
+$mat-actv8-blue: (
+    50 : #ebf2fd,
+    100 : #cde0fb,
+    200 : #abcbf8,
+    300 : #89b6f5,
+    400 : #70a6f2,
+    500 : #5796f0,
+    600 : #4f8eee,
+    700 : #4683ec,
+    800 : #3c79e9,
+    900 : #2c68e5,
+    A100 : #ffffff,
+    A200 : #f1f5ff,
+    A400 : #bed2ff,
+    A700 : #a5c0ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);   
+$mat-actv8-light-blue: (
+    50 : #ebf9ff,
+    100 : #cceffe,
+    200 : #aae5fe,
+    300 : #88dbfe,
+    400 : #6fd3fd,
+    500 : #55cbfd,
+    600 : #4ec6fd,
+    700 : #44befc,
+    800 : #3bb8fc,
+    900 : #2aacfc,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #d4eeff,
+    A700 : #bae3ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);  
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define a theme.
+$primary: mat-palette($mat-actv8-blue, 500);
+$accent:  mat-palette($mat-actv8-light-blue, 500);
+$warn:  mat-palette($mat-red, A200, A100, A400);
+$gradient: linear-gradient(90deg, #5796F0 0%, #55CBFD 100%);
+$theme: mat-light-theme($primary, $accent, $warn);
+$primary-grey: #BDBDBD;
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+@include mat-datepicker-theme($theme);
